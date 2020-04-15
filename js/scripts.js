@@ -8,7 +8,14 @@ var letterCheck = function(letter){
   };
 }
 
-
+var vowelModify = function(word){
+  if (word.length === 1){
+    word = word + "ay";
+  } else {
+    word = word + "way";
+  };
+  return word;
+}
 
 
 
@@ -20,7 +27,9 @@ var translatorPigLatin = function(sentence){
     words[index] = words[index].toLowerCase();
 
     if (letterCheck(words[index][0]) === "vowel") {
-      console.log(words[index] + " starts with a vowel.");
+      console.log(words[index] + " starts with a vowel and becomes:");
+      words[index] = vowelModify(words[index]);
+      console.log(words[index]);
     } else if (letterCheck(words[index][0]) === "consonant") {
       console.log(words[index] + " starts with a consonant.");
     } else {
