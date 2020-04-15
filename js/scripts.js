@@ -19,19 +19,26 @@ var vowelModify = function(word){
 
 var consonantModify = function(word){
   var wordBegining = "";
-  var wordEnding = "";
+  var wordEnding = word[0];
   var wordNew = word;
 
-  for(index = 0; index < word.length; index += 1){
-    if (letterCheck(word[index]) === "consonant"){
+  for(index = 1; index < word.length; index += 1){
+    if (letterCheck(word[index]) === "consonant" && word[index] !== "y"){
       wordEnding = wordEnding + word[index];
+    } else if (word[index - 1] === "q" && word[index] === "u"){
+      wordEnding = wordEnding + word[index];
+      for (index2 = index + 1; index2 < word.length; index2 += 1) {
+        var wordBegining = wordBegining + word[index2];
+      };
+      index = 100;
     } else {
-      for(index2 = index; index2 < word.length; index2 += 1){
+      for (index2 = index; index2 < word.length; index2 += 1) {
         var wordBegining = wordBegining + word[index2];
       };
       index = 100;
     };
   };
+  
 
   wordNew = wordBegining + wordEnding + "ay";
   return wordNew;
