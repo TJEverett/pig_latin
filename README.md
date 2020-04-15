@@ -1,6 +1,6 @@
 # Pig Latin Translator
 
-#### Translate a phrase into Pig Latin, 04/14/2020_
+#### Translate a phrase into Pig Latin, 04/15/2020_
 
 #### By _**Tristen Everett**_
 
@@ -25,10 +25,6 @@ Has an input for the user to write what they wish to have translated. The progra
 3. Select "save as" and save file to your desktop.
 4. Go to desktop and right-click the downloaded file and tell it to extract all.
 5. Open the newly extracted file and launch the index.html file with your prefered browser.
-
-## Known Bugs
-
-Under development and not yet finished.
 
 ## Technologies Used
 
