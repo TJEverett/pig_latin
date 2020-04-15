@@ -6,7 +6,7 @@ var letterCheck = function(letter){
   } else {
     return "neither";
   };
-}
+};
 
 var vowelModify = function(word){
   if (word.length === 1){
@@ -15,25 +15,43 @@ var vowelModify = function(word){
     word = word + "way";
   };
   return word;
-}
+};
 
+var consonantModify = function(word){
+  var wordBegining = "";
+  var wordEnding = "";
+  var wordNew = word;
 
+  for(index = 0; index < word.length; index += 1){
+    if (letterCheck(word[index]) === "consonant"){
+      wordEnding = wordEnding + word[index];
+    } else {
+      for(index2 = index; index2 < word.length; index2 += 1){
+        var wordBegining = wordBegining + word[index2];
+      };
+      index = 100;
+    };
+  };
 
-
+  wordNew = wordBegining + wordEnding + "ay";
+  return wordNew;
+};
 
 var translatorPigLatin = function(sentence){
   var words = sentence.split(' ');
-  for(index = 0; index < words.length; index += 1){
-    words[index] = words[index].toLowerCase();
+  for(i = 0; i < words.length; i += 1){
+    words[i] = words[i].toLowerCase();
 
-    if (letterCheck(words[index][0]) === "vowel") {
-      console.log(words[index] + " starts with a vowel and becomes:");
-      words[index] = vowelModify(words[index]);
-      console.log(words[index]);
-    } else if (letterCheck(words[index][0]) === "consonant") {
-      console.log(words[index] + " starts with a consonant.");
+    if (letterCheck(words[i][0]) === "vowel") {
+      console.log(words[i] + " starts with a vowel and becomes:");
+      words[i] = vowelModify(words[i]);
+      console.log(words[i]);
+    } else if (letterCheck(words[i][0]) === "consonant") {
+      console.log(words[i] + " starts with a consonant and becomes:");
+      words[i] = consonantModify(words[i]);
+      console.log(words[i]);
     } else {
-      console.log(words[index] + " starts with neither");
+      console.log(words[i] + " starts with neither");
     };
   };
   var output = words.join(' ');
