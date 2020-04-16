@@ -38,7 +38,6 @@ var consonantModify = function(word){
       index = 100;
     };
   };
-  
 
   wordNew = wordBegining + wordEnding + "ay";
   return wordNew;
@@ -50,15 +49,10 @@ var translatorPigLatin = function(sentence){
     words[i] = words[i].toLowerCase();
 
     if (letterCheck(words[i][0]) === "vowel") {
-      console.log(words[i] + " starts with a vowel and becomes:");
       words[i] = vowelModify(words[i]);
-      console.log(words[i]);
     } else if (letterCheck(words[i][0]) === "consonant") {
-      console.log(words[i] + " starts with a consonant and becomes:");
       words[i] = consonantModify(words[i]);
-      console.log(words[i]);
     } else {
-      console.log(words[i] + " starts with neither");
     };
   };
   var output = words.join(' ');

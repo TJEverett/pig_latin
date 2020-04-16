@@ -1,6 +1,6 @@
 # Pig Latin Translator
 
-#### Translate a phrase into Pig Latin, 04/15/2020_
+#### Translate a phrase into Pig Latin, 04/16/2020_
 
 #### By _**Tristen Everett**_
 
